@@ -3,17 +3,17 @@ using namespace std;
 
 int main(){
 
-    int A,B,C; cin>>A>>B>>C;
-    if(A<=C*2 && B>=C){
-        int check = 0;
-        for(int i = C*2; i <B;i=i+C){
-            cout<<i; 
-            check = 1;
+    int A,B,C,temp; cin>>A>>B>>C;
+    int check = 0;
+    for(int i = C; i <= B; i=i+C){
+        if(i>=A&&i<=B){
+            cout<<i;
+            check=1;
             break;
         }
-        if(check==0) cout<<-1;
-        
     }
-    else cout<<-1;
+    if(check==0)
+    cout<<-1;
+    
     return 0;
 }
