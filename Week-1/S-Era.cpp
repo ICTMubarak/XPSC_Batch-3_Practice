@@ -23,14 +23,24 @@ int main(){
         // int b = mx-mxIndx;
         // cout<<max(a,b)<<endl;
 
-        long long int arr[n],count=0;
-        for(int i =0;i<n;i++) cin>>arr[i];
-        for(int i = 0;i<n;i++){
-            int j = i;
-            while(arr[j]>j){
-                count++;
-                j++;
+        long long int arr[n+1],count=0;
+        for(int i =1;i<=n;i++) cin>>arr[i];
+
+        for(int i = 1,j=1;i<=n;i++,j++){
+            //cout<<i<<endl;
+            // while(arr[i]>j){
+            //     j++;
+            //     count++;
+                
+            // }
+
+            if(arr[i]>j){
+                count = count + arr[i]-j;
+                j = j+arr[i]-j;
+                
             }
+
+
         }
 
         cout<<count<<endl;
