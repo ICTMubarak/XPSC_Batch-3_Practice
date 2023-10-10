@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int longestSubarrayWithSumK(vector<int> a, long long k) {
+int longestSubarrayWithSumK(vector<int> &a, long long k) {
     cout<<k;
     int N =  a.size();
     cout<<N;
