@@ -10,14 +10,12 @@ int main(){
         string str; cin>>str;
         vector<string> v;
         long long int count =0;
-        for(int i=0,j=2;j<=n;i++,j++){
-            string subS1 = str.substr(0,i);
-            string subS2 = str.substr(j,n-j);
-            string subS3=subS1+subS2;
-            //cout<<subS<<" ";
+        for(int i=0;i<n-1;i++){
+             string subS3=str.substr(i,2);
+             sort(subS3.begin(),subS3.end());
             if(find(v.begin(),v.end(),subS3)==v.end()){
                 v.push_back(subS3);
-                //cout<<subS
+                //cout<<subS3<<" ";
                 count++;
             }
         }
