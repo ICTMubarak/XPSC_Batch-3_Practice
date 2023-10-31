@@ -31,6 +31,7 @@ int main(){
 
         if(f) cout<<"YES"<<'\n';
         else cout<<"NO"<<'\n';
+
         
     }
     
