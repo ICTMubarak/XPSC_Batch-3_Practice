@@ -7,7 +7,7 @@ vector<long long int> g[N];
 vector<long long int> cd(N);
  
  long long int dfs(long long int x){
-  visit[x]=true;
+visit[x]=true;
  int count=0;
   bool flg=true;
     for(auto y: g[x]){
