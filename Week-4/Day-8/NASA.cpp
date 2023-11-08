@@ -20,15 +20,24 @@ int main(){
     while(t--){
         int n; cin>>n;
         vector<long long int> v(n);
-
+        map<long long int, long long int> mp;
+        int newN=0;
         for(int i=0;i<n;i++){
-            cin>>v[i];
+            long long int x; cin>>x;
+            mp[x]++;
+            if(find(v.begin(),v.end(),x)==v.end()){
+                v[newN]=x;
+                newN++;
+            } 
         }
         int ans=0;
-        for(int i=0;i<n;i++){
-            for(int j=i;j<n;j++){
+        for(int i=0;i<newN;i++){
+            for(int j=i;j<newN;j++){
                 long long int x= v[i]^v[j];
-                ans = ans+pndm(x);
+                if(pndm(x)){
+                    ans = ans+mp[x];
+                }
+                
             }
         }
 
