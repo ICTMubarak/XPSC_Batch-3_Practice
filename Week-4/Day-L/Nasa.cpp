@@ -35,7 +35,9 @@ int main(){
             for(int j=i;j<newN;j++){
                  long long int x= v[i]^v[j];
                  if(pndm(x)){
-                     ans = ans+mp[v[i]]+mp[v[j]];
+
+                    if(i==j) ans = ans+mp[v[i]]+mp[v[j]]; 
+                    
                 }
                
             }
