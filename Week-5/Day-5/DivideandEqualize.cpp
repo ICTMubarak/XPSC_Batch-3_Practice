@@ -6,29 +6,26 @@ int main(){
     while (t--){
         int n;cin>>n;
         int arr[n];
-        int mx=INT_MIN;
+
         for(int i=0;i<n;i++){
             cin>>arr[i];
         } 
-
-        sort(arr,arr+n);
   
-        int l=0,r=n;
+        int l=0,r=INT_MAX;
 
-        bool f=true;
+        bool f=false;
 
         while(l<=r){
             int mid=l+(r-l)/2;
-            double mul=1.00;
+            double mul=1.0;
             for(int i=0;i<n;i++){
-                mul=mul*((double)arr[i]/(double)arr[mid]);
+                mul*= ((arr[i]*1.0)/mid);
             }
-            if(mul==1.00){
-                cout<<"YES"<<'\n';
-                f=false;
+            if(fabs(mul-1.0)<1e-15){
+                f=true;
                 break;
             }
-            else if(mul>1.00){
+            else if(mul>1){
                 l=mid+1;
             }
             else{
@@ -36,7 +33,10 @@ int main(){
             }
         }
 
-        if(f) cout<<"NO"<<'\n';
+
+
+        if(f) cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
 
 
     }
