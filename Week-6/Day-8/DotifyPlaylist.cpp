@@ -21,8 +21,7 @@ int main(){
 
         sort(v.rbegin(),v.rend());
         
-
-        if(f){
+        if(f && v.size()>=k){
             int ans=0, t=0;
             for(auto val:v){
                 ans=ans+val;
