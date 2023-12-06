@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int l(long long int a, long long int b){
+long long l(long long int a, long long int b){
     long long int g = __gcd(a,b);
     return (b/g)*a;
 }
