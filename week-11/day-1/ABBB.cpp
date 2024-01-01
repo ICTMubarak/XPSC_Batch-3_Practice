@@ -6,22 +6,19 @@ int main(){
     int t; cin>>t;
 
     while (t--){
-
         string str; cin>>str;
-        bool f=true;
-        while(f){
-            f=false;
-            int l=str.length();
-            for(int i=0;i<l-1;i++){
-                if((str[i]=='A'&&str[i+1]=='B')||(str[i]=='B'&&str[i+1]=='B')){
-                    str.erase(i,2);
-                    f=true;
-                    break;
-                }
+        int l=str.length();
+        stack<char> st;
+        for(int i=0;i<l;i++){
+            if(st.empty()){
+                st.push(str[i]);
+            }
+            else{
+                if(str[i]=='B') st.pop();
+                else st.push(str[i]);
             }
         }
-
-        cout<<str.length()<<'\n';
+       cout<<st.size()<<'\n';
     }
     
 
